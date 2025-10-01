@@ -26,18 +26,9 @@ public class PaddleMovement : MonoBehaviour
         m_moveAction.Disable();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        moveInput = m_moveAction.ReadValue<Vector2>();
-        if (moveInput != Vector2.zero)
-        {
-            Debug.Log("Moving");
-        }
-    }
-
     private void FixedUpdate()
     {
+        moveInput = m_moveAction.ReadValue<Vector2>();
         rb.linearVelocityY = moveInput.y * moveSpeed;
     }
 }
