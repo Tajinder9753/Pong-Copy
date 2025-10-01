@@ -12,16 +12,32 @@ public class PaddleMovement : MonoBehaviour
     private void Awake()
     {
         m_moveAction = InputSystem.actions.FindAction("Move");
-        rb = this.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 
+    }
+
+    private void OnEnable()
+    {
+        m_moveAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        m_moveAction.Disable();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (m_moveAction.WasPressedThisFrame())
+        moveInput = m_moveAction.ReadValue<Vector2>();
+        if (moveInput != Vector2.zero)
         {
             Debug.Log("Moving");
         }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.linearVelocityY = moveInput.y * moveSpeed;
     }
 }
