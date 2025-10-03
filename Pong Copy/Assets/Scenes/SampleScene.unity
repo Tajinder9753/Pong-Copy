@@ -185,6 +185,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   player1_score: {fileID: 1381863198}
   player2_score: {fileID: 1197271278}
+  player1: {fileID: 696872769}
+  player2: {fileID: 1799129488}
   ball: {fileID: 3114447327296139245, guid: 1174e0a027e6fea4493f84b39a3772a4, type: 3}
 --- !u!4 &292153379
 Transform:
@@ -331,6 +333,42 @@ PrefabInstance:
     - target: {fileID: 2328755758640261074, guid: 1174e0a027e6fea4493f84b39a3772a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750728657132112026, guid: 1174e0a027e6fea4493f84b39a3772a4, type: 3}
+      propertyPath: throwForce
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750728657132112026, guid: 1174e0a027e6fea4493f84b39a3772a4, type: 3}
+      propertyPath: throwDirections.Array.data[0].x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750728657132112026, guid: 1174e0a027e6fea4493f84b39a3772a4, type: 3}
+      propertyPath: throwDirections.Array.data[0].y
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750728657132112026, guid: 1174e0a027e6fea4493f84b39a3772a4, type: 3}
+      propertyPath: throwDirections.Array.data[1].x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750728657132112026, guid: 1174e0a027e6fea4493f84b39a3772a4, type: 3}
+      propertyPath: throwDirections.Array.data[1].y
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750728657132112026, guid: 1174e0a027e6fea4493f84b39a3772a4, type: 3}
+      propertyPath: throwDirections.Array.data[2].x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750728657132112026, guid: 1174e0a027e6fea4493f84b39a3772a4, type: 3}
+      propertyPath: throwDirections.Array.data[2].y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750728657132112026, guid: 1174e0a027e6fea4493f84b39a3772a4, type: 3}
+      propertyPath: throwDirections.Array.data[3].x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750728657132112026, guid: 1174e0a027e6fea4493f84b39a3772a4, type: 3}
+      propertyPath: throwDirections.Array.data[3].y
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3114447327296139245, guid: 1174e0a027e6fea4493f84b39a3772a4, type: 3}
       propertyPath: m_Name
@@ -818,7 +856,7 @@ Transform:
   m_GameObject: {fileID: 696872769}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.25, y: -0.18628, z: 0}
+  m_LocalPosition: {x: -8.25, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -832,15 +870,15 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696872769}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 279dee852784a3443818359623bb1f95, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -861,7 +899,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 279dee852784a3443818359623bb1f95, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -909,7 +947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4806a7e6d2263446954e841727d2c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PaddleMovement
-  moveSpeed: 4
+  moveSpeed: 6
 --- !u!1 &710660577
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,7 +990,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710660577}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -970,7 +1008,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!212 &710660580
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1117,7 +1155,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721696614}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1135,7 +1173,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!212 &721696617
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1945,7 +1983,7 @@ Transform:
   m_GameObject: {fileID: 1799129488}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.26, y: -0.18628, z: 0}
+  m_LocalPosition: {x: 8.25, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1963,7 +2001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4806a7e6d2263446954e841727d2c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PaddleMovement
-  moveSpeed: 4
+  moveSpeed: 6
 --- !u!50 &1799129492
 Rigidbody2D:
   serializedVersion: 5
@@ -1972,7 +2010,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799129488}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

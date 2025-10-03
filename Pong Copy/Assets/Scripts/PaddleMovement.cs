@@ -8,7 +8,6 @@ public class PaddleMovement : MonoBehaviour
     private InputAction m_moveAction_player1;
     private InputAction m_moveAction_player2;
     private Vector2 moveInput;
-    private Vector2 moveInput2;
     private GameObject player;
     Rigidbody2D rb;
 
